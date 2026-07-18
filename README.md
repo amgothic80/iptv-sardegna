@@ -34,15 +34,16 @@ repository (formato PNG, compatibile con tutte le app IPTV).
 
 ### Nota sulla qualità video
 
-Videolina, Sardegna 1, L'Unione TV e Radiolina vengono trasmesse
-dall'emittente su Dailymotion a **512×288** (più una variante 320×180):
-è il massimo che esiste online, la stessa qualità visibile sui loro siti
-ufficiali. Verificato interrogando lo stesso endpoint usato dal player
-ufficiale Dailymotion: non esistono varianti HD. Gli altri canali offrono
-il loro massimo nativo (TeleSardegna, RTS e Tele Radio Maristella in
-1080p, Tele Costa Smeralda in 720p). La playlist usa sempre i master
-adattivi, quindi un eventuale futuro aumento di qualità da parte delle
-emittenti verrebbe recepito automaticamente.
+I canali Dailymotion (Videolina, Sardegna 1, L'Unione TV, Radiolina) sono
+disponibili **fino a 1280×720 (HD)**. Attenzione: Dailymotion nasconde le
+varianti HD quando il master playlist viene richiesto da un IP di
+datacenter e dichiara solo 512×288/320×180; le rendition superiori però
+esistono sul CDN e sono raggiungibili con lo stesso token. Lo script di
+refresh le sonda e ricostruisce il master completo con l'HD in cima
+(vedi `scripts/refresh_dailymotion.py`). Gli altri canali offrono il loro
+massimo nativo: TeleSardegna, RTS e Tele Radio Maristella in 1080p, Tele
+Costa Smeralda in 720p. La playlist usa sempre master adattivi, quindi
+eventuali migliorie future delle emittenti vengono recepite da sole.
 
 ## Stato dei canali (verifica del 2026-07-18)
 
