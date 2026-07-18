@@ -1,0 +1,5 @@
+MAC	24:88:32:24:24:B9
+
+Andare sul sito https://iptvextreme.eu/ per caricarlo con il MAC oppure usare il file locale (vedi sotto).
+
+Accertarsi che l'app sulla TV abbia i permessi per tutti i file (questa impostazione è un po' nascosta), altrimenti dice che la playlist è vuota.
