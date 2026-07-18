@@ -41,14 +41,22 @@ dopo alcune ore. Per questo motivo:
 | Radio Televisione Sarda | ✅ verificato | HLS diretto |
 | Tele Radio Maristella | ✅ verificato | HLS diretto |
 | YouTg | ✅ risponde | HLS (contenuto del player di [youtg.net](https://www.youtg.net/)) |
+| Radiolina TV | ✅ verificato (via Dailymotion, auto-aggiornato) | [radiolina.it](https://www.radiolina.it/) — visual radio del gruppo Videolina |
+| Radio Iglesias TV | ✅ verificato | HLS diretto |
 | Aristanis TV (ex Super TV Oristano) | ⚠️ non verificabile dall'ambiente di test (porta 1936); link attuale censito da [Zappr](https://github.com/ZapprTV/channels) | HLS diretto |
 | Uno4 TV | ⚠️ il CDN ufficiale (`cdn.uno4.it`) rispondeva 502 al momento della verifica; link lasciato perché è quello ufficiale corrente | HLS diretto |
+| Radio OndaSarda | ⚠️ non verificabile dall'ambiente di test (porta 1936); voce commentata in playlist | HLS diretto |
 | Teleregione Live | ℹ️ solo Twitch (`teleregione_sardegna`), commentato in playlist | Twitch |
 | Canale 48 Sardegna | ℹ️ solo Twitch (`canale48webtv`), commentato in playlist | Twitch |
+| EjaTV | ℹ️ solo YouTube, commentato in playlist | [ejatv.com](https://www.ejatv.com/) |
+| Catalan TV (Alghero) | ℹ️ solo YouTube, commentato in playlist | [catalantv.it](https://www.catalantv.it/diretta/) |
+| Bonaria TV | ℹ️ solo YouTube, commentato in playlist | TV Corallo |
 
-Canali rimasti fuori: **Odeon 24 Sardegna** (server irraggiungibile) e
+Canali rimasti fuori: **Odeon 24 Sardegna** (server irraggiungibile),
 **Sardegna Live** (player Livepush con URL generato dinamicamente, non
-collegabile in modo stabile da una playlist statica).
+collegabile in modo stabile da una playlist statica), **TTS** e
+**Canale Italia Sardegna** (nessuno stream ufficiale pubblico: esistono solo
+restream di terze parti del segnale DTT).
 
 ## Legalità
 

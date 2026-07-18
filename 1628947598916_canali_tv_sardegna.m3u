@@ -37,7 +37,24 @@ https://streamcdng23-e18da6642b684f8aa9ae449862783a56.msvdn.net/vod/AR3aHAMlBiY9
 #EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/uno4.png" group-title="",Uno4 TV
 https://cdn.uno4.it/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radiolina.png" group-title="",Radiolina TV
+https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/radiolina.m3u8
+
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radioiglesiastv.png" group-title="",Radio Iglesias TV
+https://59d7d6f47d7fc.streamlock.net/visualradio/visualradio/playlist.m3u8
+
+# --- Radio OndaSarda (canale 80 DTT): link censito ma non verificabile,
+#     decommentare per provarlo ---
+##EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radioondasarda.png" group-title="",Radio OndaSarda
+#https://604e46ac2bdee.streamlock.net:1936/radiosardegna/radiosardegna/playlist.m3u8
+
 # --- Canali disponibili solo su Twitch (servono player compatibili, es. Kodi
 #     con addon Twitch; non riproducibili come HLS diretto) ---
 # Teleregione Live: https://www.twitch.tv/teleregione_sardegna
 # Canale 48 Sardegna: https://www.twitch.tv/canale48webtv
+
+# --- Canali disponibili solo su YouTube (servono player compatibili;
+#     non riproducibili come HLS diretto) ---
+# EjaTV (in lingua sarda): https://www.ejatv.com (diretta YouTube)
+# Catalan TV (Alghero): https://www.youtube.com/user/catalantvweb
+# Bonaria TV (TV Corallo, Cagliari): https://www.youtube.com/watch?v=Xofb6rsCnto

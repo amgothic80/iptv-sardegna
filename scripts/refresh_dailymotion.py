@@ -18,6 +18,7 @@ CHANNELS = {
     "videolina": "k5IzEKA6K34xZiEXbVm",   # www.videolina.it/live
     "sardegna1": "x893du6",               # www.sardegna1.it/live/diretta-live
     "unione-tv": "k58ADHSu6a0wFJGfQnC",   # L'Unione TV (gruppo L'Unione Sarda)
+    "radiolina": "k2KONW2dOh2PqAGfWS4",   # www.radiolina.it (visual radio del gruppo)
 }
 
 # Il CDN di Dailymotion risponde 403 agli user-agent browser completi
