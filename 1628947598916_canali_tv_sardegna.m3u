@@ -1,34 +1,43 @@
-﻿#EXTM3U
+#EXTM3U
+# Canali TV regionali della Sardegna - stream pubblici ufficiali
+# Ultimo aggiornamento link: 2026-07-18
+#
+# Nota: Videolina, Sardegna 1 e L'Unione TV trasmettono la diretta tramite
+# Dailymotion, i cui URL contengono un token temporaneo. Le voci qui sotto
+# puntano ai file in streams/ di questo repository, rigenerati
+# automaticamente ogni 4 ore da una GitHub Action (vedi README).
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/immagini/sardegna1.gif" group-title="",Sardegna Uno
-https://7e1cc2454f2242afabe05cc0a2f483cd.msvdn.net/live/S30721796/ZS3Xu8mn5f0J/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/videolina.png" group-title="",Videolina
+https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/videolina.m3u8
 
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/Tundrak/IPTV-Italia/6c7fb3b3de6b9dae2633a4485afaee4240c26dff/logos/videolina.png" group-title="",Videolina
-https://7e1cc2454f2242afabe05cc0a2f483cd.msvdn.net/videolina/videolina_live/videolina_live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/lunionetv.svg" group-title="",L'Unione TV
+https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/unione-tv.m3u8
 
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Tele_Costa_Smeralda_logo.svg" group-title="",Tele Costa Smeralda
-https://7e1cc2454f2242afabe05cc0a2f483cd.msvdn.net/tcs_live/tcs/tcs/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/sardegna1.png" group-title="",Sardegna 1
+https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/sardegna1.m3u8
 
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/it/2/22/Logosupertvoristano.png" group-title="",Super TV Oristano
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/telecostasmeralda.png" group-title="",Tele Costa Smeralda
+https://5bb65e9de3fdf.streamlock.net/live/TCS/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/telesardegna.png" group-title="",TeleSardegna
+https://f54364fcc4f84d9d9a72c8915e72704b.msvdn.net/live/S95445963/z3dZO4LpABmG/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/aristanistv.png" group-title="",Aristanis TV (ex Super TV Oristano)
 https://video2.azotosolutions.com:1936/supertvoristano/supertvoristano/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/radio-televisione-sarda.png" group-title="",Radio Televisione Sarda
-https://stream.ejatv.com/memfs/dff807e1-b3b2-49f5-92d6-5b178be4eb6d_output_0.m3u8?session=VLxiBHv2SUy68j5z4oTvpU
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radiotelevisionesarda.svg" group-title="",Radio Televisione Sarda
+https://stream.ejatv.com/memfs/dff807e1-b3b2-49f5-92d6-5b178be4eb6d.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/teleregione-live-sardegna.png" group-title="",Teleregione Live
-https://5f22d76e220e1.streamlock.net/galluralive/galluralive/chunklist_w1799851896.m3u8
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/teleradiomaristella.png" group-title="",Tele Radio Maristella
+https://load-balancer.azotosolutions.com/cdnedge10/smil:live10.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/uno4-tv.png" group-title="",Uno4 TV
-https://cdn.uno4.it/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/youtg.png" group-title="",YouTg
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/youtg.png" group-title="",YouTg
 https://streamcdng23-e18da6642b684f8aa9ae449862783a56.msvdn.net/vod/AR3aHAMlBiY9/f0c6c33e-8db1-4ddd-b204-b131e5358bf2/chunklist-f1-v1-a1.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/teleradio-maristella-tv.png" group-title="",Tele Radio Maristella
-https://origin1.live-dvbt2.it/cdnedge10/live10/chunklist_w1482151791.m3u8
+#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/uno4.png" group-title="",Uno4 TV
+https://cdn.uno4.it/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/telesardegna.png" group-title="",TeleSardegna
-https://dotfvxkfj90ca.cloudfront.net/live/telesardegnalive1_aac/chunklist.m3u8?token=aca52eed-4400-4cd1-a41a-31298b73d407&streamSessionId=f8b43bdb-da3a-40d1-9ccf-8378f9b133fc&code=telesardegnaLIVE&expires=1736077235970&ctrl=848edc77f6f59ffcf3027fe01f3a5b700cd9d5d8cb72ae1ca7e180da7d80d4648b656b5938b786bed6c2a496bc5816503e188ddb76c56589b4df48631982d5ae
-
-#EXTINF:-1 tvg-logo="https://www.tvdream.net/img/canale48.png" group-title="",Canale 48 Sardegna
-https://euw21-0.playlist.ttvnw.net/v1/playlist/CowG4GSXqKfKOU70og45ZzqtLsu8olqqAHo5qxhOp9gUD8JMiI3oLGGekjPMvw_LTy0c9Smg_bRpq8bgdj7Tt5hDuLANjSj0219isMsd43bIcbd4eAbsoQOpgW1_BY6nabgNDM5Q-a3EEiTpvhTtHrEXLheOWER5MOXN19NxyylbBozRETM32TA202HPNJRn89Fcsgn4t8_bT652cfp10FIwJZydDVme4gheKCR-_OuPKD9W5qVW0AvSRNkvDVyLPXHIyqkQEam37kHzCGRgFZl5LMvzSj7olYvmyFzsnyNF7NRzey3D2qZeez0DszGi86f9GijeyvsPk7J1J2TBKoaOhEk7yVTMAj30vdVsPipnVRnhS4oOS3UHMXniGHOiLLX9VncoxYOzAIB_XOiT8WGuTLhF-rcqEDejZ3By2JFNVzFUkpF_fzcpSzE1Sd5FeB_3GX_CSj7d2Mwh5YoBlPQVoTdffPB-lp6Tf7sUv-5rhKtgrs2pG9M_T8bFB3qfgopJ7NM3eVV5rhr961v3jL_yx57_W1A1pGxIt3v05zRms5CVkQ6JtZ9_iRpQnyZvT_f8Cj1guHqm0C50mUIAZKsIJ8487iprCjnJZwJ2I6_BUuz9SjuJihGHXoaM4QEbeEBajOA-9cSvsyotRIlGb3AM-MrclJ_oa5uO4ruCDe0ANFODiCukbJ7TVs79a_qH2coT4r0tbtP_1d9Z__beQcLuQ8-5GA_TEw0z7z8R1-G4CYhgP_49Kt4EL-oC9dWu3TOtr3MytE4biagvTa8ZsPJYJLOuk0nYsYnXL-sCac6_ms50QXByBGmWrECCWHrAr2j9ZCLxNAWFpHnErHclQ0RzGme8DXgdsYDd9NtZrL89NA2ryxyEK2OLjh8STwMnEx0GwfdEARVmtLzHvBuW6mGCsasDOlnaCW1nFO3fjltueaCPHzSTNiCV9D-ZRM_N2cit-OXqplCFzE3d9cMhoyKBpNbmIjRxA3n-lxVE-p1zms74MUbwd7NBkMKeH_-djRdFSIcm-frKtG02J7YdGgz8yx1Ixn0eC6Rac5wgASoJZXUtd2VzdC0yMKEL.m3u8
+# --- Canali disponibili solo su Twitch (servono player compatibili, es. Kodi
+#     con addon Twitch; non riproducibili come HLS diretto) ---
+# Teleregione Live: https://www.twitch.tv/teleregione_sardegna
+# Canale 48 Sardegna: https://www.twitch.tv/canale48webtv
