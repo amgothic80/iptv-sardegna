@@ -23,7 +23,7 @@ https://5bb65e9de3fdf.streamlock.net/live/TCS/playlist.m3u8
 #EXTINF:-1 tvg-name="TeleSardegna" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/telesardegna.png" group-title="",TeleSardegna
 https://f54364fcc4f84d9d9a72c8915e72704b.msvdn.net/live/S95445963/z3dZO4LpABmG/playlist.m3u8
 
-#EXTINF:-1 tvg-name="Aristanis TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/aristanistv.png" group-title="",Aristanis TV (ex Super TV Oristano)
+#EXTINF:-1 tvg-name="Aristanis TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/aristanistv.png" group-title="",Aristanis TV
 https://video2.azotosolutions.com:1936/supertvoristano/supertvoristano/playlist.m3u8
 
 #EXTINF:-1 tvg-name="Radio Televisione Sarda" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/radiotelevisionesarda.png" group-title="",Radio Televisione Sarda

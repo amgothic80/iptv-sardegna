@@ -1,82 +1,37 @@
 # IPTV Sardegna
 
-Playlist IPTV dei canali TV regionali della Sardegna, basata sugli stream
-pubblici che le emittenti trasmettono ufficialmente sui propri siti web.
+An IPTV playlist containing public, official web streams of regional TV channels from Sardinia, Italy.
 
-Playlist principale: [`1628947598916_canali_tv_sardegna.m3u`](1628947598916_canali_tv_sardegna.m3u)
+## Playlist Link
 
-## Come funziona
+To use this playlist, copy the URL below and paste it into your favorite IPTV player (such as VLC, Kodi, TiviMate, or other IPTV applications):
 
-La maggior parte dei canali usa un normale URL HLS (`.m3u8`) stabile.
+```text
+https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/1628947598916_canali_tv_sardegna.m3u
+```
 
-**Videolina**, **Sardegna 1** e **L'Unione TV** (canale del gruppo L'Unione
-Sarda, lo stesso di Videolina) trasmettono invece la diretta ufficiale
-tramite Dailymotion, i cui URL HLS contengono un token temporaneo che scade
-dopo alcune ore. Per questo motivo:
+## How It Works
 
-- la playlist principale punta ai file in [`streams/`](streams/) di questo
-  repository (tramite `raw.githubusercontent.com`);
-- la GitHub Action
-  [`refresh-streams.yml`](.github/workflows/refresh-streams.yml) rigenera
-  quei file **ogni 4 ore** eseguendo
-  [`scripts/refresh_dailymotion.py`](scripts/refresh_dailymotion.py), che
-  ricava l'URL tokenizzato corrente dal player pubblico Dailymotion usato
-  dai siti ufficiali delle emittenti.
+* **Direct Streams:** Most channels stream using stable, direct HLS URLs (`.m3u8`).
+* **Dynamic Streams (Dailymotion):** Broadcasters such as **Videolina**, **Sardegna 1**, **L'Unione TV**, and **Radiolina TV** stream officially via Dailymotion. These streams contain temporary security tokens that expire after a few hours.
+* **Auto-Update:** A scheduled GitHub Action runs automatically every 4 hours to extract the latest streaming tokens and keep the playlist files inside the `streams/` directory updated.
 
-> **Nota**: il workflow pianificato gira solo sul branch predefinito
-> (`main`). Dopo il merge è possibile lanciarlo subito a mano dalla tab
-> *Actions* → *Aggiorna stream Dailymotion* → *Run workflow*. Su repository
-> pubblici GitHub disabilita i workflow pianificati dopo 60 giorni senza
-> attività: in tal caso basta riabilitarlo dalla tab Actions.
+## Channel List
 
-I loghi dei canali sono ospitati nella cartella [`logos/`](logos/) di questo
-repository (formato PNG, compatibile con tutte le app IPTV).
-
-### Nota sulla qualità video
-
-I canali Dailymotion (Videolina, Sardegna 1, L'Unione TV, Radiolina) sono
-disponibili **fino a 1280×720 (HD)**. Attenzione: Dailymotion nasconde le
-varianti HD quando il master playlist viene richiesto da un IP di
-datacenter e dichiara solo 512×288/320×180; le rendition superiori però
-esistono sul CDN e sono raggiungibili con lo stesso token. Lo script di
-refresh le sonda e ricostruisce il master completo con l'HD in cima
-(vedi `scripts/refresh_dailymotion.py`). Gli altri canali offrono il loro
-massimo nativo: TeleSardegna, RTS e Tele Radio Maristella in 1080p, Tele
-Costa Smeralda in 720p. La playlist usa sempre master adattivi, quindi
-eventuali migliorie future delle emittenti vengono recepite da sole.
-
-## Stato dei canali (verifica del 2026-07-18)
-
-| Canale | Stato | Fonte |
+| Channel | Stream Source | Quality |
 | --- | --- | --- |
-| Videolina | ✅ verificato (via Dailymotion, auto-aggiornato) | [videolina.it/live](https://www.videolina.it/live) |
-| L'Unione TV | ✅ verificato (via Dailymotion, auto-aggiornato) | gruppo L'Unione Sarda |
-| Sardegna 1 | ✅ verificato (via Dailymotion, auto-aggiornato) | [sardegna1.it/live/diretta-live](https://www.sardegna1.it/live/diretta-live/) |
-| Tele Costa Smeralda | ✅ verificato | HLS diretto |
-| TeleSardegna | ✅ verificato | HLS diretto (MainStreaming, da [telesardegna.it](https://www.telesardegna.it/)) |
-| Radio Televisione Sarda | ✅ verificato | HLS diretto |
-| Tele Radio Maristella | ✅ verificato | HLS diretto |
-| Radiolina TV | ✅ verificato (via Dailymotion, auto-aggiornato) | [radiolina.it](https://www.radiolina.it/) — visual radio del gruppo Videolina |
-| Radio Iglesias TV | ✅ verificato | HLS diretto |
-| Aristanis TV (ex Super TV Oristano) | ⚠️ non verificabile dall'ambiente di test (porta 1936); link attuale censito da [Zappr](https://github.com/ZapprTV/channels) | HLS diretto |
-| Uno4 TV | ⚠️ il CDN ufficiale (`cdn.uno4.it`) rispondeva 502 al momento della verifica; link lasciato perché è quello ufficiale corrente | HLS diretto |
-| Radio OndaSarda | ⚠️ non verificabile dall'ambiente di test (porta 1936); voce commentata in playlist | HLS diretto |
-| Teleregione Live | ℹ️ solo Twitch (`teleregione_sardegna`), commentato in playlist | Twitch |
-| Canale 48 Sardegna | ℹ️ solo Twitch (`canale48webtv`), commentato in playlist | Twitch |
-| EjaTV | ℹ️ solo YouTube, commentato in playlist | [ejatv.com](https://www.ejatv.com/) |
-| Catalan TV (Alghero) | ℹ️ solo YouTube, commentato in playlist | [catalantv.it](https://www.catalantv.it/diretta/) |
-| Bonaria TV | ℹ️ solo YouTube, commentato in playlist | TV Corallo |
+| Videolina | Dailymotion (auto-updated) | Up to 720p HD |
+| L'Unione TV | Dailymotion (auto-updated) | Up to 720p HD |
+| Sardegna 1 | Dailymotion (auto-updated) | Up to 720p HD |
+| Radiolina TV | Dailymotion (auto-updated) | Up to 720p HD |
+| Tele Costa Smeralda | Direct HLS | 720p |
+| TeleSardegna | Direct HLS | 1080p |
+| Radio Televisione Sarda | Direct HLS | 1080p |
+| Tele Radio Maristella | Direct HLS | 1080p |
+| Radio Iglesias TV | Direct HLS | SD |
+| Aristanis TV | Direct HLS | SD |
+| Uno4 TV | Direct HLS | SD |
 
-Canali rimasti fuori: **YouTg** (rimosso: il link disponibile è un
-contenuto on-demand del player del sito, non una vera diretta),
-**Odeon 24 Sardegna** (server irraggiungibile),
-**Sardegna Live** (player Livepush con URL generato dinamicamente, non
-collegabile in modo stabile da una playlist statica), **TTS** e
-**Canale Italia Sardegna** (nessuno stream ufficiale pubblico: esistono solo
-restream di terze parti del segnale DTT).
+## Legal Disclaimer
 
-## Legalità
-
-Tutti i link puntano agli stream pubblici e gratuiti che le emittenti
-stesse distribuiscono ufficialmente (sui propri siti, su Dailymotion o su
-Twitch). Nessun contenuto è ospitato in questo repository.
+All stream links point directly to the official, free-to-air web streams distributed by the broadcasters themselves. No copyrighted video content is hosted, stored, or re-transmitted within this repository.
