@@ -1,12 +1,13 @@
 name: Aggiorna stream Dailymotion
 
-# Videolina, Sardegna 1 e L'Unione TV trasmettono su Dailymotion con URL HLS
-# a token temporaneo: questo workflow rigenera i file in streams/ ogni 4 ore
-# così la playlist principale resta sempre funzionante.
+# Videolina, Sardegna 1, L'Unione TV e Radiolina trasmettono su Dailymotion
+# con URL HLS a token temporaneo. Questo workflow rigenera i file in
+# streams/ per aggiornarli, ma va lanciato a mano (Actions → Run workflow):
+# i runner di GitHub Actions vengono bloccati con 403 da Dailymotion, quindi
+# lo scheduling automatico è stato rimosso per non generare fallimenti a
+# ripetizione.
 
 on:
-  schedule:
-    - cron: "23 */4 * * *"
   workflow_dispatch:
 
 permissions:
