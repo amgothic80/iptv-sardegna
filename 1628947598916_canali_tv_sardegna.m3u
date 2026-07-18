@@ -31,9 +31,6 @@ https://stream.ejatv.com/memfs/dff807e1-b3b2-49f5-92d6-5b178be4eb6d.m3u8
 #EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/teleradiomaristella.png" group-title="",Tele Radio Maristella
 https://load-balancer.azotosolutions.com/cdnedge10/smil:live10.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/youtg.png" group-title="",YouTg
-https://streamcdng23-e18da6642b684f8aa9ae449862783a56.msvdn.net/vod/AR3aHAMlBiY9/f0c6c33e-8db1-4ddd-b204-b131e5358bf2/chunklist-f1-v1-a1.m3u8
-
 #EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/uno4.png" group-title="",Uno4 TV
 https://cdn.uno4.it/index.m3u8
 

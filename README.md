@@ -40,7 +40,6 @@ dopo alcune ore. Per questo motivo:
 | TeleSardegna | ✅ verificato | HLS diretto (MainStreaming, da [telesardegna.it](https://www.telesardegna.it/)) |
 | Radio Televisione Sarda | ✅ verificato | HLS diretto |
 | Tele Radio Maristella | ✅ verificato | HLS diretto |
-| YouTg | ✅ risponde | HLS (contenuto del player di [youtg.net](https://www.youtg.net/)) |
 | Radiolina TV | ✅ verificato (via Dailymotion, auto-aggiornato) | [radiolina.it](https://www.radiolina.it/) — visual radio del gruppo Videolina |
 | Radio Iglesias TV | ✅ verificato | HLS diretto |
 | Aristanis TV (ex Super TV Oristano) | ⚠️ non verificabile dall'ambiente di test (porta 1936); link attuale censito da [Zappr](https://github.com/ZapprTV/channels) | HLS diretto |
@@ -52,7 +51,9 @@ dopo alcune ore. Per questo motivo:
 | Catalan TV (Alghero) | ℹ️ solo YouTube, commentato in playlist | [catalantv.it](https://www.catalantv.it/diretta/) |
 | Bonaria TV | ℹ️ solo YouTube, commentato in playlist | TV Corallo |
 
-Canali rimasti fuori: **Odeon 24 Sardegna** (server irraggiungibile),
+Canali rimasti fuori: **YouTg** (rimosso: il link disponibile è un
+contenuto on-demand del player del sito, non una vera diretta),
+**Odeon 24 Sardegna** (server irraggiungibile),
 **Sardegna Live** (player Livepush con URL generato dinamicamente, non
 collegabile in modo stabile da una playlist statica), **TTS** e
 **Canale Italia Sardegna** (nessuno stream ufficiale pubblico: esistono solo
