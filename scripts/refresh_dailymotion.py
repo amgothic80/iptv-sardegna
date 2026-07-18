@@ -20,6 +20,7 @@ cima, così i player scelgono la qualità migliore davvero disponibile.
 import json
 import re
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -46,13 +47,32 @@ RENDITIONS = {
 # inviati da client non-browser: quello generico invece è accettato.
 USER_AGENT = "Mozilla/5.0"
 
+# Dai runner di GitHub Actions (IP noti di datacenter) Dailymotion può
+# restituire 403 in modo intermittente. Inviare Referer/Origin come farebbe
+# il player incorporato riduce i falsi positivi dell'anti-bot; in aggiunta
+# si ritenta con un breve backoff prima di arrendersi.
+HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Referer": "https://www.videolina.it/",
+    "Origin": "https://www.videolina.it",
+}
+RETRY_DELAYS = (0, 2, 5)
+
 STREAMS_DIR = Path(__file__).resolve().parent.parent / "streams"
 
 
 def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8")
+    last_error = None
+    for delay in RETRY_DELAYS:
+        if delay:
+            time.sleep(delay)
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8")
+        except Exception as exc:  # noqa: BLE001 - si ritenta, poi si propaga
+            last_error = exc
+    raise last_error
 
 
 def is_valid_playlist(url: str) -> bool:
