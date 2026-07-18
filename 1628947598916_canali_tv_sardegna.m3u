@@ -2,47 +2,48 @@
 # Canali TV regionali della Sardegna - stream pubblici ufficiali
 # Ultimo aggiornamento link: 2026-07-18
 #
-# Nota: Videolina, Sardegna 1 e L'Unione TV trasmettono la diretta tramite
-# Dailymotion, i cui URL contengono un token temporaneo. Le voci qui sotto
-# puntano ai file in streams/ di questo repository, rigenerati
-# automaticamente ogni 4 ore da una GitHub Action (vedi README).
+# Nota: Videolina, Sardegna 1, L'Unione TV e Radiolina trasmettono la
+# diretta tramite Dailymotion, i cui URL contengono un token temporaneo.
+# Le voci qui sotto puntano ai file in streams/ di questo repository,
+# rigenerati automaticamente ogni 4 ore da una GitHub Action (vedi README).
+# I loghi sono ospitati nella cartella logos/ di questo repository.
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/videolina.png" group-title="",Videolina
+#EXTINF:-1 tvg-name="Videolina" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/videolina.png" group-title="",Videolina
 https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/videolina.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/lunionetv.svg" group-title="",L'Unione TV
+#EXTINF:-1 tvg-name="L'Unione TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/lunionetv.png" group-title="",L'Unione TV
 https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/unione-tv.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/sardegna1.png" group-title="",Sardegna 1
+#EXTINF:-1 tvg-name="Sardegna 1" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/sardegna1.png" group-title="",Sardegna 1
 https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/sardegna1.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/telecostasmeralda.png" group-title="",Tele Costa Smeralda
+#EXTINF:-1 tvg-name="Tele Costa Smeralda" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/telecostasmeralda.png" group-title="",Tele Costa Smeralda
 https://5bb65e9de3fdf.streamlock.net/live/TCS/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/telesardegna.png" group-title="",TeleSardegna
+#EXTINF:-1 tvg-name="TeleSardegna" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/telesardegna.png" group-title="",TeleSardegna
 https://f54364fcc4f84d9d9a72c8915e72704b.msvdn.net/live/S95445963/z3dZO4LpABmG/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/aristanistv.png" group-title="",Aristanis TV (ex Super TV Oristano)
+#EXTINF:-1 tvg-name="Aristanis TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/aristanistv.png" group-title="",Aristanis TV (ex Super TV Oristano)
 https://video2.azotosolutions.com:1936/supertvoristano/supertvoristano/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radiotelevisionesarda.svg" group-title="",Radio Televisione Sarda
+#EXTINF:-1 tvg-name="Radio Televisione Sarda" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/radiotelevisionesarda.png" group-title="",Radio Televisione Sarda
 https://stream.ejatv.com/memfs/dff807e1-b3b2-49f5-92d6-5b178be4eb6d.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/teleradiomaristella.png" group-title="",Tele Radio Maristella
+#EXTINF:-1 tvg-name="Tele Radio Maristella" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/teleradiomaristella.png" group-title="",Tele Radio Maristella
 https://load-balancer.azotosolutions.com/cdnedge10/smil:live10.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/uno4.png" group-title="",Uno4 TV
+#EXTINF:-1 tvg-name="Uno4 TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/uno4.png" group-title="",Uno4 TV
 https://cdn.uno4.it/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radiolina.png" group-title="",Radiolina TV
+#EXTINF:-1 tvg-name="Radiolina TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/radiolina.png" group-title="",Radiolina TV
 https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/streams/radiolina.m3u8
 
-#EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radioiglesiastv.png" group-title="",Radio Iglesias TV
+#EXTINF:-1 tvg-name="Radio Iglesias TV" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/radioiglesias.png" group-title="",Radio Iglesias TV
 https://59d7d6f47d7fc.streamlock.net/visualradio/visualradio/playlist.m3u8
 
 # --- Radio OndaSarda (canale 80 DTT): link censito ma non verificabile,
 #     decommentare per provarlo ---
-##EXTINF:-1 tvg-logo="https://zappr.stream/assets/logos/radioondasarda.png" group-title="",Radio OndaSarda
+##EXTINF:-1 tvg-name="Radio OndaSarda" tvg-logo="https://raw.githubusercontent.com/amgothic80/iptv-sardegna/main/logos/radioondasarda.png" group-title="",Radio OndaSarda
 #https://604e46ac2bdee.streamlock.net:1936/radiosardegna/radiosardegna/playlist.m3u8
 
 # --- Canali disponibili solo su Twitch (servono player compatibili, es. Kodi

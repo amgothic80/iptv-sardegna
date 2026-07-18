@@ -29,6 +29,22 @@ dopo alcune ore. Per questo motivo:
 > pubblici GitHub disabilita i workflow pianificati dopo 60 giorni senza
 > attività: in tal caso basta riabilitarlo dalla tab Actions.
 
+I loghi dei canali sono ospitati nella cartella [`logos/`](logos/) di questo
+repository (formato PNG, compatibile con tutte le app IPTV).
+
+### Nota sulla qualità video
+
+I canali Dailymotion (Videolina, Sardegna 1, L'Unione TV, Radiolina) sono
+disponibili **fino a 1280×720 (HD)**. Attenzione: Dailymotion nasconde le
+varianti HD quando il master playlist viene richiesto da un IP di
+datacenter e dichiara solo 512×288/320×180; le rendition superiori però
+esistono sul CDN e sono raggiungibili con lo stesso token. Lo script di
+refresh le sonda e ricostruisce il master completo con l'HD in cima
+(vedi `scripts/refresh_dailymotion.py`). Gli altri canali offrono il loro
+massimo nativo: TeleSardegna, RTS e Tele Radio Maristella in 1080p, Tele
+Costa Smeralda in 720p. La playlist usa sempre master adattivi, quindi
+eventuali migliorie future delle emittenti vengono recepite da sole.
+
 ## Stato dei canali (verifica del 2026-07-18)
 
 | Canale | Stato | Fonte |
