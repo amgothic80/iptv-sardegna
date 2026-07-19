@@ -5,10 +5,12 @@ Esegue il refresh ogni 4 ore. Ideale per Termux su smartphone
 che rimane quasi sempre acceso.
 
 Utilizzo:
-  python3 run_cron.py
+  python3 run_cron.py        # Avvia scheduler (ogni 4 ore)
+  python3 run_cron.py --once # Esegui refresh una volta
 """
 
 import subprocess
+import sys
 import time
 from datetime import datetime
 
@@ -53,20 +55,28 @@ def run_refresh():
 
 
 def main():
-    """Loop principale che esegue il refresh ogni 4 ore."""
-    print("🚀 Scheduler Dailymotion avviato")
-    print("⏰ Refresh programmato ogni 4 ore")
-    print("💡 Mantieni Termux aperto per il funzionamento continuo")
-    print()
+    """Loop principale che esegue il refresh ogni 4 ore, o una sola volta con --once."""
+    # Controlla argomenti da linea di comando
+    run_once = "--once" in sys.argv
 
-    # Esegui il primo refresh subito
-    run_refresh()
-
-    # Poi continua ogni 4 ore (14400 secondi)
-    while True:
-        print(f"⏳ Prossimo refresh tra 4 ore ({datetime.now().strftime('%H:%M:%S')})")
-        time.sleep(14400)  # 4 ore in secondi
+    if run_once:
+        print("🔄 Esecuzione singola del refresh")
         run_refresh()
+        print("✅ Refresh completato")
+    else:
+        print("🚀 Scheduler Dailymotion avviato")
+        print("⏰ Refresh programmato ogni 4 ore")
+        print("💡 Mantieni Termux aperto per il funzionamento continuo")
+        print()
+
+        # Esegui il primo refresh subito
+        run_refresh()
+
+        # Poi continua ogni 4 ore (14400 secondi)
+        while True:
+            print(f"⏳ Prossimo refresh tra 4 ore ({datetime.now().strftime('%H:%M:%S')})")
+            time.sleep(14400)  # 4 ore in secondi
+            run_refresh()
 
 
 if __name__ == "__main__":

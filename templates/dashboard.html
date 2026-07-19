@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiorna Stream Sardegna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 Stream Sardegna</h1>
+            <p class="subtitle">Aggiorna token Dailymotion</p>
+        </div>
+
+        <div class="status-card">
+            <div class="status-info">
+                <span class="status-label">Ultimo aggiornamento:</span>
+                <span id="last-update" class="status-value">{{ latest_display }}</span>
+            </div>
+        </div>
+
+        <button id="refresh-btn" class="refresh-button" onclick="refreshStreams()">
+            <span class="button-icon">🔄</span>
+            <span class="button-text">Aggiorna Stream</span>
+        </button>
+
+        <div id="status-message" class="status-message hidden"></div>
+
+        <div class="channels-section">
+            <h2>Canali</h2>
+            <div class="channels-list">
+                {% for channel_name, channel_data in channels.items() %}
+                <div class="channel-item">
+                    <div class="channel-name">
+                        {% if channel_name == 'videolina' %}
+                            📺 Videolina
+                        {% elif channel_name == 'sardegna1' %}
+                            📺 Sardegna 1
+                        {% elif channel_name == 'unione-tv' %}
+                            📺 L'Unione TV
+                        {% elif channel_name == 'radiolina' %}
+                            📻 Radiolina
+                        {% endif %}
+                    </div>
+                    <div class="channel-time">{{ channel_data.display }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="info-box">
+            <p><strong>💡 Info:</strong></p>
+            <p>Questo pulsante aggiorna i token dei canali che trasmettono su Dailymotion.</p>
+            <p>Lo scheduler automatico (run_cron.py) aggiorna ogni 4 ore. Usa questo pulsante solo se i canali non funzionano.</p>
+        </div>
+    </div>
+
+    <script>
+        let isRefreshing = false;
+
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('status-message');
+            statusEl.textContent = message;
+            statusEl.className = `status-message ${type}`;
+            statusEl.classList.remove('hidden');
+        }
+
+        function hideStatus() {
+            const statusEl = document.getElementById('status-message');
+            statusEl.classList.add('hidden');
+        }
+
+        function updateLastUpdate() {
+            fetch('/api/status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('last-update').textContent = data.latest_display;
+                })
+                .catch(() => {
+                    // Continua anche se fetch fallisce
+                });
+        }
+
+        function refreshStreams() {
+            if (isRefreshing) return;
+
+            isRefreshing = true;
+            const btn = document.getElementById('refresh-btn');
+            btn.disabled = true;
+
+            showStatus('⏳ Aggiornamento in corso... (questo potrebbe durare un minuto)', 'loading');
+
+            fetch('/api/refresh', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(data => {
+                        throw new Error(data.message || 'Errore sconosciuto');
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    showStatus('✅ Token aggiornati con successo! I canali dovrebbero funzionare.', 'success');
+                    updateLastUpdate();
+
+                    // Aggiorna la lista dei canali con i nuovi orari
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    showStatus(`❌ Errore: ${data.message}`, 'error');
+                }
+            })
+            .catch(error => {
+                showStatus(`❌ Errore: ${error.message}`, 'error');
+            })
+            .finally(() => {
+                isRefreshing = false;
+                btn.disabled = false;
+            });
+        }
+
+        // Aggiorna lo stato ogni 30 secondi
+        setInterval(updateLastUpdate, 30000);
+    </script>
+</body>
+</html>
